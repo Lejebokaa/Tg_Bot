@@ -24,4 +24,3 @@ async def start(message: Message, state: FSMContext):
         reply_markup=main_keyboard()
     )
     await state.set_state(UserStates.user_choose_button)
-    
