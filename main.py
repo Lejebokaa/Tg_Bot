@@ -2,8 +2,11 @@ from aiogram import Bot, Dispatcher
 import asyncio
 from handlers import other_handlers, weather_by_city
 
+from config import TOKEN
+
+
 async def main():
-    bot = Bot(token="6313187013:AAHdEWTeN5aA37yPe3RNyaSlL5-mA7rMz6c")#Управляет командами
+    bot = Bot(token=TOKEN)#Управляет командами
     dp = Dispatcher()#Принимает действия
     dp.include_routers(other_handlers.router, weather_by_city.router)
     await dp.start_polling(bot) #async and await - может делать другие процессы пока выполняеться другой
